@@ -28,6 +28,28 @@
    pre-commit install
    ```
 
+## Running the Application
+
+### 1. Store the Index (First Time Only)
+
+Before running the app, you need to process your PDF and store the embeddings in Pinecone:
+
+```bash
+python store_index.py
+```
+
+### 2. Run the Web App
+
+Finally, start the Flask server:
+
+```bash
+python app.py
+```
+
+The application will be available at `http://localhost:8080`.
+
+> **Note:** If you see an "Address already in use" error, it means another process is using port 8080. You can either stop that process or change the port in `app.py`.
+
 ## Vector Database
 
 This project currently uses **Pinecone** as a remote vector database for storing and retrieving medical document embeddings.
